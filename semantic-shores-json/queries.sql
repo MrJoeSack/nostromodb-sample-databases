@@ -36,8 +36,8 @@ where sqft is null
 group by property_type;
 
 select a.last_name, count(*), avg(p.list_price)
-from properties p
-join agents a on p.agent_id = a.agent_id
+from properties p, agents a
+where p::agent_id = a::agent_id
 group by a.last_name;
 
 select id, address.city, list_price
