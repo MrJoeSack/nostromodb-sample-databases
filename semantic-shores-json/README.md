@@ -34,5 +34,5 @@ python generate.py --properties 100000  # larger
 
 Deterministic for a given size and seed. No dependencies, no network.
 
-`queries.sql` has a few example queries. They have not been run yet, so the
-syntax may need adjusting.
+`queries.sql` has example queries. Statements are single-line, and the NDJSON
+files import with `has_top_level_array=false`.
