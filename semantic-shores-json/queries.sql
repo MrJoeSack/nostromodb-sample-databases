@@ -12,7 +12,7 @@ select address.city, count(*), avg(list_price), avg(days_on_market) from propert
 select id, address.city, address.state, list_price from properties where address.state = 'CA' limit 10;
 select id, geo.lat, geo.lng from properties where geo.lat > 40 and geo.lng < -122;
 select count(distinct neighborhood) from properties;
-select id, price_history.0.price, price_history.0.source.channel from properties limit 10;
+select id, features[0], price_history[0] from properties limit 10;
 select hoa_fee, count(*) from properties group by hoa_fee;
 select garage, count(*) from properties group by garage;
 select property_type, count(*) from properties where sqft is null group by property_type;
